@@ -2,18 +2,165 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Emailapp : a basic mockup of an email app" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <link rel="stylesheet" media="screen" href="stylesheets/styles.css">
     <title>Email App</title>
   </head>
 
   <body>
-    <h1>Lixur email app</h1>
+  <!-- 1- Mail Box -->
+    <section id="emailbox" class="emailbox slideleft">
+      <div class="nav-btn">
+        <i class="fa fa-angle-left"></i></div>
 
+      <div class="user-info">
+        <div class="col user-profilepic"><img src="images/user_main.png" alt="user profile picture"></div>
+        <div class="col user-name">Linsey Marshmore </div>
+        <i class="fa fa-caret-down"></i>
+      </div>
+
+      <ul class="emailbox_list">
+        <li class="selected">
+            <a href="" class="">Inbox <span class="">132</span></a>
+        </li>
+        <li class="">Sent <span></span></li>
+        <li class="">Stared <span></span></li>
+        <li class="">Archived</li>
+        <li class="">Trash</li>
+      </ul>
+
+      <div class="brandingzone"><img src="images/logo_lixur.png" alt="Lixur logo"></div>
+    </section>
+
+  <!-- 2- Email List -->
+    <section id="emaillist" class="emaillist">
+      <div class="searcharea"><input type="search">
+        <i class="fa fa-search"></i>
+      </div>
+
+      <ul class="emaillist_list">
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user1.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jul 3 <div class="star"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user2.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jul 2 <div class="star stared"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user3.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jul 1 <div class="star"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user4.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jul 1 <div class="star stared"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user5.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jul 1 <div class="star"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user6.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jun 29 <div class="star"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user1.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jun 28 <div class="star"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user3.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jun 28 <div class="star"></div></div>
+        </li>
+
+        <li class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user4.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Next conference at Trendsey office</div>
+            <div class="emailSubtitle">Candy biscuit tootsie roll cotton candy. Gummi bears lemon drops topping brownie cheesecake...</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jun 27 <div class="star"></div></div>
+        </li>
+
+      </ul>
+    </section>
+
+  <!-- 3- Email Content -->
+    <section class="emailcontent">
+      <header>
+        <h1>Next conference at Trendsey office</h1>
+        <ul class="email_toolbar">
+          <li><i class="fa fa-refresh"></i></li>
+          <li><i class="fa fa-archive"></i></li>
+          <li><i class="fa fa-reply"></i></li>
+          <li><i class="fa fa-plus"></i></li>
+        </ul>
+      </header>
+
+      <section>
+        <!--Email title-->
+        <div class="emaillist_listitem">
+          <div class="emaillist_listitem_content left"><img src="./images/user1.png" alt="Sender picture"></div>
+          <div class="emaillist_listitem_content middle">
+            <div class="emailTitle">Jimmy Wang</div>
+            <div class="emailSubtitle">to me, Kevin Grey, Walter Lee</div>
+          </div>
+          <div class="emaillist_listitem_content right">Jul 3, 2014 <p>09:10am</p><div class="star"></div></div> 
+        </div>
+
+        <!--Email text-->
+        <article class="emailcontent_text">
+          <p>Hi, Brad,</p><p>Apple pie bonbon dessert danish gummi bears. Dragée donut ice cream croissant. Toffee sweet brownie brownie lollipop marshmallow. Cake soufflé sweet jujubes lemon drops. Gingerbread danish jelly-o applicake cupcake donut fruitcake gummies. Fruitcake biscuit chocolate cake chocolate cake chocolate cake icing. Bear claw toffee cookie gummi bears halvah. Unerdwear.com gummies toffee. Liquorice cake croissant gummies carrot cake powder unerdwear.com. Icing jelly-o croissant tootsie roll tart cheesecake icing.</p>
+          <p>Tiramisu donut chocolate bar caramels sweet danish. Liquorice cotton candy sesame snaps tootsie roll danish. Jelly-o caramels apple pie gummies halvah. Cookie icing jelly beans cheesecake icing topping toffee sesame snaps. Toffee powder candy biscuit candy canes chocolate jelly. Marzipan dragée applicake gummies topping. Lollipop applicake jujubes bonbon powder. Bonbon brownie marzipan halvah macaroon sweet. Jujubes candy canes tart jelly-o icing chocolate halvah. Lemon drops bear claw jujubes bear claw. Danish croissant lemon drops muffin cupcake gummi bears cake pudding. Bear claw wafer brownie bear claw pie fruitcake chocolate cake dessert.</p>
+          <p>Cheers,</p><p>Jimmy</p>
+        </article>
+
+      </section>
+    </section>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="./javascripts/main.js"></script>
 
   </body>
 </html>

@@ -1,0 +1,116 @@
+@import 'normalize';
+@import 'font-awesome.min';
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+
+/*mixins*/
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin transition($transition-property:all, $transition-time:0.3s, $method:ease-in-out) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+/*Variables*/
+$color_main_light: #ffcbbb; /*light peach*/
+$color_main_dark: #36464e; /*navy blue*/
+
+$color_light:white;
+$color_light1:#d6cbc7; /*milk tea*/
+$color_light2: rgba(255,255,255,0.32); /*white shade*/
+$color_light3: #8fa3ad; /*light blue*/
+
+$color_dark: black;
+$color_bright1: #ffea3a; /*bright yellow*/
+$color_bright2: #ff9d7f; /*bright peach*/
+$color_bright3: #ff3c00; /*bright orange red*/
+
+
+body{ position:relative;font-family: 'Roboto', sans-serif; font-size:62.5%;}
+img{width:100%;}
+a{text-decoration: none; color:$color_dark;}
+.col{float:left;}
+.fa-caret-down{color:$color_main_dark;}
+ul{list-style: none; }
+
+.nav-btn{width:20px; position:absolute;right:-30px; padding:1em 0 1em 10px; 
+	background-color: $color_main_light;}
+
+/*1 - mail box*/
+.emailbox{ @include transition;
+	width:250px; font-size:1rem; font-weight: 300;
+  	background:$color_main_light;
+  	position:relative; 
+  	 /*hide when you don't need to see mail box items*/
+  	z-index:999; position:absolute;
+  	&.slideleft{margin-left:-250px;}
+}
+
+
+	.user-info{vertical-align: center; width:94%; padding:4% 3% 0; color:$color_main_dark;height:40px;padding-top:15px;}
+		.user-profilepic{width:30%; max-width:40px; /*margin-top:-5px;*/}
+		.user-name{width:60%; height:40px; margin-left:5%; line-height:1em;  }
+
+	.emailbox_list{clear:both; margin-top:2em;  padding:0;
+		li{ width:85%; padding: 1em 5% 1em 10%;
+			&.selected{background:$color_light2;}
+		} 
+		span{color:$color_bright2; font-size:0.9em; float:right; margin-right:2em;}
+		}
+
+	.brandingzone{max-width:110px; position:absolute; bottom:0;}
+
+/*2 - email list*/
+
+.emaillist{float:left; background:$color_light1; width:100%; position:relative; z-index:99; }
+.searcharea{position:relative; background: $color_light2; border-radius:15px; float:right; margin:1.5em 1.5em 0 0;
+	input{border: none; width:85%; float:left; background: none; font-size:1.5em;}
+	.fa-search{position:absolute; right:10px; font-size:1.8em; line-height:1.2em; }
+	}
+.emaillist_list{ 
+	clear:both;  padding:0; padding-top:4em;
+	li{padding:1.5em 0 1.5em; @include clearfix; position:relative;
+		&:nth-child(odd) {background:$color_light2;}}
+	}
+
+	.emaillist_listitem_content{float:left;}
+	.emaillist_listitem_content.left{max-width:46px; width:10%; padding:1% 1% 0; }/*screensize 460px*/
+	.emaillist_listitem_content.middle{width:73%; padding:0 1% 0 2%; font-size:1.1em; overflow: hidden; }
+	.emaillist_listitem_content.right{width:10%; padding:0 1% 0;}
+	.emailTitle{width: 100%; font-size:1.4em; font-weight:bold; white-space: nowrap; text-overflow:ellipsis; overflow: hidden;}
+
+.star{background:url(../images/star_sprite.png) no-repeat center top; width:26px; height:25px; margin-top:0.7em;}
+.stared{background:url(../images/star_sprite.png) center 25px;}
+
+/*3 - email content*/
+.emailcontent{float:left; padding:1em 2% 0; width:96%; 
+	header{border-bottom: $color_bright3 1px solid; padding-bottom:1em;width:100%; position:relative;
+		h1{width:55%; position:relative;}
+		.email_toolbar{width:40%; font-size:1.8em;position:absolute; top:0; right:0;margin-top:0;}
+			li{width:25%; float:left;}
+	}
+
+	.emaillist_listitem{margin-top:2em;}
+	.emaillist_listitem_content.middle{width:63%;line-height:2em;}
+	.emaillist_listitem_content.right{width:20%; position:relative;
+		div{float:right; position: absolute; top:0; right:0;}}
+
+	.star{float:left;}
+
+	.emailcontent_text{font-size:1.4em; line-height: 1.8em; clear:both; padding:2em;}
+}
+
+
+
+/*for larger screen*/
+@media only screen and (min-width:40em){
+	.emaillist{width:40%;}
+	.emailcontent{width:56%;}
+}
