@@ -18,6 +18,14 @@
     transition: $transition-property $transition-time $method;
 }
 
+@mixin transform($rotate:-90deg){
+	-webkit-transform: rotate($rotate);
+	-moz-transform: rotate($rotate);
+	-ms-transform: rotate($rotate);
+	-o-transform: rotate($rotate);
+	transform: rotate($rotate);
+}
+
 /*Variables*/
 $color_main_light: #ffcbbb; /*light peach*/
 $color_main_dark: #36464e; /*navy blue*/
@@ -33,15 +41,16 @@ $color_bright2: #ff9d7f; /*bright peach*/
 $color_bright3: #ff3c00; /*bright orange red*/
 
 
-body{ position:relative;font-family: 'Roboto', sans-serif; font-size:62.5%;}
+body{ position:relative;font-family: 'Roboto', sans-serif; font-size:62.5%;
+	overflow-x:hidden;}
 img{width:100%;}
 a{text-decoration: none; color:$color_dark;}
 .col{float:left;}
 .fa-caret-down{color:$color_main_dark;}
 ul{list-style: none; }
 
-.nav-btn{width:20px; position:absolute;right:-30px; padding:1em 0 1em 10px; 
-	background-color: $color_main_light;}
+.nav-btn{width:20px; height:37px; position:absolute; right:-30px;top:0; padding:13px 0 0 10px; font-size:1rem; }
+.rotateicon{@include transform;}
 
 /*1 - mail box*/
 .emailbox{ @include transition;
@@ -51,6 +60,7 @@ ul{list-style: none; }
   	 /*hide when you don't need to see mail box items*/
   	z-index:999; position:absolute;
   	&.slideleft{margin-left:-250px;}
+  	.nav-btn{background-color: $color_main_light;}
 }
 
 
@@ -69,7 +79,12 @@ ul{list-style: none; }
 
 /*2 - email list*/
 
-.emaillist{float:left; background:$color_light1; width:100%; position:relative; z-index:99; }
+.emaillist{@include transition; float:left; background:$color_light1; 
+	width:100%; position:relative; z-index:99; 
+	&.slideleft{margin-left:-100%;}
+	.nav-btn{background-color: $color_light1; top:50px;}
+}
+
 .searcharea{position:relative; background: $color_light2; border-radius:15px; float:right; margin:1.5em 1.5em 0 0;
 	input{border: none; width:85%; float:left; background: none; font-size:1.5em;}
 	.fa-search{position:absolute; right:10px; font-size:1.8em; line-height:1.2em; }
@@ -79,25 +94,29 @@ ul{list-style: none; }
 	li{padding:1.5em 0 1.5em; @include clearfix; position:relative;
 		&:nth-child(odd) {background:$color_light2;}}
 	}
-
+	.emaillist_listitem{
+		&.selected,&:hover{background-color:$color_main_dark !important; color:$color_light;}
+		&:hover{opacity:0.7;}
+	}
 	.emaillist_listitem_content{float:left;}
 	.emaillist_listitem_content.left{max-width:46px; width:10%; padding:1% 1% 0; }/*screensize 460px*/
 	.emaillist_listitem_content.middle{width:73%; padding:0 1% 0 2%; font-size:1.1em; overflow: hidden; }
 	.emaillist_listitem_content.right{width:10%; padding:0 1% 0;}
 	.emailTitle{width: 100%; font-size:1.4em; font-weight:bold; white-space: nowrap; text-overflow:ellipsis; overflow: hidden;}
 
-.star{background:url(../images/star_sprite.png) no-repeat center top; width:26px; height:25px; margin-top:0.7em;}
+.star{background:url(../images/star_sprite.png) no-repeat center top; width:26px; height:25px; margin-top:0.7em;
+	&:hover{cursor:pointer;}}
 .stared{background:url(../images/star_sprite.png) center 25px;}
 
 /*3 - email content*/
-.emailcontent{float:left; padding:1em 2% 0; width:96%; 
+.emailcontent{float:left; padding:1em 2% 0; width:96%; position:absolute; z-index:9;
 	header{border-bottom: $color_bright3 1px solid; padding-bottom:1em;width:100%; position:relative;
-		h1{width:55%; position:relative;}
-		.email_toolbar{width:40%; font-size:1.8em;position:absolute; top:0; right:0;margin-top:0;}
+		h1{width:50%; margin-left:26px; position:relative;}
+		.email_toolbar{width:35%; font-size:1.8em;position:absolute; top:0; right:0;margin-top:10;}
 			li{width:25%; float:left;}
 	}
 
-	.emaillist_listitem{margin-top:2em;}
+	.emailcontent_title{margin-top:2em;}
 	.emaillist_listitem_content.middle{width:63%;line-height:2em;}
 	.emaillist_listitem_content.right{width:20%; position:relative;
 		div{float:right; position: absolute; top:0; right:0;}}
@@ -111,6 +130,7 @@ ul{list-style: none; }
 
 /*for larger screen*/
 @media only screen and (min-width:40em){
-	.emaillist{width:40%;}
-	.emailcontent{width:56%;}
+	.emaillist{width:40%;
+		.nav-btn{display:none;}}
+	.emailcontent{width:56%;position:relative;}
 }

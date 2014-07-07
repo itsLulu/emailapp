@@ -2890,50 +2890,62 @@ th {
 /*bright yellow*/
 /*bright peach*/
 /*bright orange red*/
-/* line 36, ../scss/styles.scss */
+/* line 44, ../scss/styles.scss */
 body {
   position: relative;
   font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
-/* line 37, ../scss/styles.scss */
+/* line 46, ../scss/styles.scss */
 img {
   width: 100%;
 }
 
-/* line 38, ../scss/styles.scss */
+/* line 47, ../scss/styles.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 39, ../scss/styles.scss */
+/* line 48, ../scss/styles.scss */
 .col {
   float: left;
 }
 
-/* line 40, ../scss/styles.scss */
+/* line 49, ../scss/styles.scss */
 .fa-caret-down {
   color: #36464e;
 }
 
-/* line 41, ../scss/styles.scss */
+/* line 50, ../scss/styles.scss */
 ul {
   list-style: none;
 }
 
-/* line 43, ../scss/styles.scss */
+/* line 52, ../scss/styles.scss */
 .nav-btn {
   width: 20px;
+  height: 37px;
   position: absolute;
   right: -30px;
-  padding: 1em 0 1em 10px;
-  background-color: #ffcbbb;
+  top: 0;
+  padding: 13px 0 0 10px;
+  font-size: 1rem;
+}
+
+/* line 53, ../scss/styles.scss */
+.rotateicon {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 /*1 - mail box*/
-/* line 47, ../scss/styles.scss */
+/* line 56, ../scss/styles.scss */
 .emailbox {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -2949,12 +2961,16 @@ ul {
   z-index: 999;
   position: absolute;
 }
-/* line 53, ../scss/styles.scss */
+/* line 62, ../scss/styles.scss */
 .emailbox.slideleft {
   margin-left: -250px;
 }
+/* line 63, ../scss/styles.scss */
+.emailbox .nav-btn {
+  background-color: #ffcbbb;
+}
 
-/* line 57, ../scss/styles.scss */
+/* line 67, ../scss/styles.scss */
 .user-info {
   vertical-align: center;
   width: 94%;
@@ -2964,14 +2980,14 @@ ul {
   padding-top: 15px;
 }
 
-/* line 58, ../scss/styles.scss */
+/* line 68, ../scss/styles.scss */
 .user-profilepic {
   width: 30%;
   max-width: 40px;
   /*margin-top:-5px;*/
 }
 
-/* line 59, ../scss/styles.scss */
+/* line 69, ../scss/styles.scss */
 .user-name {
   width: 60%;
   height: 40px;
@@ -2979,22 +2995,22 @@ ul {
   line-height: 1em;
 }
 
-/* line 61, ../scss/styles.scss */
+/* line 71, ../scss/styles.scss */
 .emailbox_list {
   clear: both;
   margin-top: 2em;
   padding: 0;
 }
-/* line 62, ../scss/styles.scss */
+/* line 72, ../scss/styles.scss */
 .emailbox_list li {
   width: 85%;
   padding: 1em 5% 1em 10%;
 }
-/* line 63, ../scss/styles.scss */
+/* line 73, ../scss/styles.scss */
 .emailbox_list li.selected {
   background: rgba(255, 255, 255, 0.32);
 }
-/* line 65, ../scss/styles.scss */
+/* line 75, ../scss/styles.scss */
 .emailbox_list span {
   color: #ff9d7f;
   font-size: 0.9em;
@@ -3002,7 +3018,7 @@ ul {
   margin-right: 2em;
 }
 
-/* line 68, ../scss/styles.scss */
+/* line 78, ../scss/styles.scss */
 .brandingzone {
   max-width: 110px;
   position: absolute;
@@ -3010,16 +3026,30 @@ ul {
 }
 
 /*2 - email list*/
-/* line 72, ../scss/styles.scss */
+/* line 82, ../scss/styles.scss */
 .emaillist {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   float: left;
   background: #d6cbc7;
   width: 100%;
   position: relative;
   z-index: 99;
 }
+/* line 84, ../scss/styles.scss */
+.emaillist.slideleft {
+  margin-left: -100%;
+}
+/* line 85, ../scss/styles.scss */
+.emaillist .nav-btn {
+  background-color: #d6cbc7;
+  top: 50px;
+}
 
-/* line 73, ../scss/styles.scss */
+/* line 88, ../scss/styles.scss */
 .searcharea {
   position: relative;
   background: rgba(255, 255, 255, 0.32);
@@ -3027,7 +3057,7 @@ ul {
   float: right;
   margin: 1.5em 1.5em 0 0;
 }
-/* line 74, ../scss/styles.scss */
+/* line 89, ../scss/styles.scss */
 .searcharea input {
   border: none;
   width: 85%;
@@ -3035,7 +3065,7 @@ ul {
   background: none;
   font-size: 1.5em;
 }
-/* line 75, ../scss/styles.scss */
+/* line 90, ../scss/styles.scss */
 .searcharea .fa-search {
   position: absolute;
   right: 10px;
@@ -3043,13 +3073,13 @@ ul {
   line-height: 1.2em;
 }
 
-/* line 77, ../scss/styles.scss */
+/* line 92, ../scss/styles.scss */
 .emaillist_list {
   clear: both;
   padding: 0;
   padding-top: 4em;
 }
-/* line 79, ../scss/styles.scss */
+/* line 94, ../scss/styles.scss */
 .emaillist_list li {
   padding: 1.5em 0 1.5em;
   position: relative;
@@ -3060,17 +3090,27 @@ ul {
   display: table;
   clear: both;
 }
-/* line 80, ../scss/styles.scss */
+/* line 95, ../scss/styles.scss */
 .emaillist_list li:nth-child(odd) {
   background: rgba(255, 255, 255, 0.32);
 }
 
-/* line 83, ../scss/styles.scss */
+/* line 98, ../scss/styles.scss */
+.emaillist_listitem.selected, .emaillist_listitem:hover {
+  background-color: #36464e !important;
+  color: white;
+}
+/* line 99, ../scss/styles.scss */
+.emaillist_listitem:hover {
+  opacity: 0.7;
+}
+
+/* line 101, ../scss/styles.scss */
 .emaillist_listitem_content {
   float: left;
 }
 
-/* line 84, ../scss/styles.scss */
+/* line 102, ../scss/styles.scss */
 .emaillist_listitem_content.left {
   max-width: 46px;
   width: 10%;
@@ -3078,7 +3118,7 @@ ul {
 }
 
 /*screensize 460px*/
-/* line 85, ../scss/styles.scss */
+/* line 103, ../scss/styles.scss */
 .emaillist_listitem_content.middle {
   width: 73%;
   padding: 0 1% 0 2%;
@@ -3086,13 +3126,13 @@ ul {
   overflow: hidden;
 }
 
-/* line 86, ../scss/styles.scss */
+/* line 104, ../scss/styles.scss */
 .emaillist_listitem_content.right {
   width: 10%;
   padding: 0 1% 0;
 }
 
-/* line 87, ../scss/styles.scss */
+/* line 105, ../scss/styles.scss */
 .emailTitle {
   width: 100%;
   font-size: 1.4em;
@@ -3102,78 +3142,85 @@ ul {
   overflow: hidden;
 }
 
-/* line 89, ../scss/styles.scss */
+/* line 107, ../scss/styles.scss */
 .star {
   background: url(../images/star_sprite.png) no-repeat center top;
   width: 26px;
   height: 25px;
   margin-top: 0.7em;
 }
+/* line 108, ../scss/styles.scss */
+.star:hover {
+  cursor: pointer;
+}
 
-/* line 90, ../scss/styles.scss */
+/* line 109, ../scss/styles.scss */
 .stared {
   background: url(../images/star_sprite.png) center 25px;
 }
 
 /*3 - email content*/
-/* line 93, ../scss/styles.scss */
+/* line 112, ../scss/styles.scss */
 .emailcontent {
   float: left;
   padding: 1em 2% 0;
   width: 96%;
+  position: absolute;
+  z-index: 9;
 }
-/* line 94, ../scss/styles.scss */
+/* line 113, ../scss/styles.scss */
 .emailcontent header {
   border-bottom: #ff3c00 1px solid;
   padding-bottom: 1em;
   width: 100%;
   position: relative;
 }
-/* line 95, ../scss/styles.scss */
+/* line 114, ../scss/styles.scss */
 .emailcontent header h1 {
-  width: 55%;
+  width: 50%;
+  margin-left: 26px;
   position: relative;
 }
-/* line 96, ../scss/styles.scss */
+/* line 115, ../scss/styles.scss */
 .emailcontent header .email_toolbar {
-  width: 40%;
+  width: 35%;
   font-size: 1.8em;
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 0;
+  margin-top: 10;
 }
-/* line 97, ../scss/styles.scss */
+/* line 116, ../scss/styles.scss */
 .emailcontent header li {
   width: 25%;
   float: left;
 }
-/* line 100, ../scss/styles.scss */
-.emailcontent .emaillist_listitem {
+/* line 119, ../scss/styles.scss */
+.emailcontent .emailcontent_title {
   margin-top: 2em;
 }
-/* line 101, ../scss/styles.scss */
+/* line 120, ../scss/styles.scss */
 .emailcontent .emaillist_listitem_content.middle {
   width: 63%;
   line-height: 2em;
 }
-/* line 102, ../scss/styles.scss */
+/* line 121, ../scss/styles.scss */
 .emailcontent .emaillist_listitem_content.right {
   width: 20%;
   position: relative;
 }
-/* line 103, ../scss/styles.scss */
+/* line 122, ../scss/styles.scss */
 .emailcontent .emaillist_listitem_content.right div {
   float: right;
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 105, ../scss/styles.scss */
+/* line 124, ../scss/styles.scss */
 .emailcontent .star {
   float: left;
 }
-/* line 107, ../scss/styles.scss */
+/* line 126, ../scss/styles.scss */
 .emailcontent .emailcontent_text {
   font-size: 1.4em;
   line-height: 1.8em;
@@ -3183,13 +3230,18 @@ ul {
 
 /*for larger screen*/
 @media only screen and (min-width: 40em) {
-  /* line 114, ../scss/styles.scss */
+  /* line 133, ../scss/styles.scss */
   .emaillist {
     width: 40%;
   }
+  /* line 134, ../scss/styles.scss */
+  .emaillist .nav-btn {
+    display: none;
+  }
 
-  /* line 115, ../scss/styles.scss */
+  /* line 135, ../scss/styles.scss */
   .emailcontent {
     width: 56%;
+    position: relative;
   }
 }
